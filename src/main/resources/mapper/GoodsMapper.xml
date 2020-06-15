@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.distributedlock.demo.mapper.GoodsMapper">
+
+    <select id="selectOneGoods" parameterType="int" resultType="com.distributedlock.demo.pojo.Goods">
+        select * from goods where goods_id=#{goods_id}
+    </select>
+
+
+    <update id="updateOneGoodsStock" parameterType="com.distributedlock.demo.pojo.Goods">
+        UPDATE goods SET
+        stock = #{stock}
+        WHERE goods_id = #{goods_id}
+    </update>
+
+</mapper>
